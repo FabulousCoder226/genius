@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+{% block content %}
+<!-- content  -->
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 col-md-6 cart">
+      <table>
+        <h1 class="text-center mb-3">summary</h1>
+        <thead>
+          <th>item</th>
+          <th>type</th>
+          <th>quantity</th>
+          <th>price</th>
+        </thead>
+        <tbody>
+          
+          {% if cart %}        
+          {% for item in cart %}
+          <tr class="item">
+            <td><img src="{{item.food.pix.url}}" alt=""></td>
+            <td>{{item.food.foodname}}</td>
+            <td>
+              <p>{{item.qty}}</p>
+            </td>
+            <td>₦{{item.amount|floatformat:2|intcomma}}</td>
+          </tr>      
+          
+          {% endfor %}
+          {% endif %}
+          {% comment %} <tr class="subtot">
+            <td></td>
+            <td></td>
+            <td>vat =</td>
+            <td>₦{{vat|floatformat:2|intcomma}}</td>
+          </tr> {% endcomment %}
+          <tr class="subtot">
+            <td></td>
+            <td></td>
+            <td>total =</td>
+            <td>₦{{total|floatformat:2|intcomma}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-md-6 mt-5 check">
+      <form action="{% url 'pay' %}" method="POST">
+        {% csrf_token %} 
+        <div class="row mb-2">
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" name="first_name" value="{{userprof.first_name}}" id="form6Example1" class="form-control" />
+              <label class="form-label" for="form6Example1">First name</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" name="last_name" value="{{userprof.last_name}}" id="form6Example2" class="form-control" />
+              <label class="form-label" for="form6Example2">Last name</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-2">
+          <input type="text" name="address" value="{{userprof.address}}" id="form6Example4" class="form-control" />
+          <label class="form-label" for="form6Example4">Address</label>
+        </div>
+        <div class="form-outline mb-2">
+          <input type="email" name="email" value="{{userprof.email}}" id="form6Example5" class="form-control" />
+          <label class="form-label" for="form6Example5">Email</label>
+        </div>
+        <div class="form-outline mb-2">
+          <input type="text" name="phone" value="{{userprof.phone}}" id="form6Example6" class="form-control" />
+          <label class="form-label" for="form6Example6">Phone</label>
+        </div>
+        <div class="form-outline mb-2">
+          <input type="hidden" name="total" value="{{total}}">
+          <textarea class="form-control" name="add_info" id="form6Example7" rows="4"></textarea>
+          <label class="form-label" for="form6Example7">Additional information</label>
+        </div>
+        <div class="checkbut">
+          <button type="submit" class="btn btn-primary btn-block mb-2">Pay Now</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- content done  -->
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

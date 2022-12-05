@@ -1,0 +1,468 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+:root{
+    --bg: white;
+    --icon: black;
+    --text: black;
+    --card: black;
+}
+.dark{
+    --bg: black;
+    --icon: white;
+    --text: white;
+    --card: black;
+}
+body{
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+.jonah{
+    margin-left: 3%;
+    cursor: pointer;
+}
+/* styling navbar */
+.navbar{
+    background-color: #cd0b0b;
+}
+.navbar ul a{
+    color: white;
+}
+.nav-item .dropdown-menu{
+    background-color: black;
+}
+.search button{
+    background-color: green;
+    color: white;
+}
+.nav-item i{
+    font-size: 25px;
+}
+.nav-item img{
+    height: 30px;
+    border-radius: 100%;
+}
+/* styling navbar done  */
+
+/* styling carousel  */
+.carousel-inner{
+    height: 80vh;
+}
+.carousel-control-prev i{
+    font-size: 60px;
+    color: #cd0b0b;
+}
+.carousel-control-next i{
+    font-size: 60px;
+    color: #cd0b0b;
+}
+/* styling carousel done  */
+
+/* <-- content  -->  */
+/* styling meal  */
+.title{
+    text-transform: capitalize;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    color: #cd0b0b;
+    font-size: 50px;
+}
+.bestsell .card img{
+    height: 50vh;
+    transition: 0.5s;
+}
+.bestsell .card img:hover{
+    transform: scale(1.05);
+}
+.bestsell .card p{
+    text-align: center;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #cd0b0b;
+}
+.enjoy{
+    background: url(../img/carousel3.jpg);
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+    text-align: center;
+}
+.enjoy h3{
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+    padding-top: 8%;
+}
+.enjoy button{
+    background-color: #cd0b0b;
+    text-transform: capitalize;
+    color: white;
+    text-align: center;
+}
+.enjoy button:hover{
+    background-color: #cd0b0b;
+    color: black;
+    border: none !important;
+}
+/* styling meal done  */
+
+/* styling offer  */
+.offer .card{
+    border-radius: 50%;
+}
+.offer .card img{
+    height: 20vh;
+    border-radius: 50%;
+    opacity: 1;
+    transition: 0.5s;
+}
+.offer .card img:hover{
+    transform: scale(1.2);
+}
+/* styling offer done  */
+
+/* styling contact  */
+.contact form{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.contact form label{
+    font-weight: 600;
+}
+.contact form button{
+    background-color: #cd0b0b;
+    width: 100%;
+    border: none;
+}
+.contact form button:hover{
+    background: #f83737;
+    border: none;
+}
+/* styling contact done  */
+/* <!-- content done  -->  */
+ 
+/* styling footer  */
+.footer{
+    background: black;
+}
+.footer1{
+    text-align: center;
+}
+.footer1 h4{
+    color: white;
+    text-transform: capitalize;
+}
+.footer1 h3{
+    text-transform: capitalize;
+    color: #cd0b0b;
+}
+.footer1 ul a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: white;
+    font-size: 20px;
+}
+.footer1 ul a:hover{
+    color: #cd0b0b;
+}
+.footer1 ul i{
+    color: white;
+    font-size: 20px;
+    transition: 1s;
+    cursor: pointer;
+}
+.footer1 ul i:hover{
+    transform: translateY(-10px);
+    color: #cd0b0b;
+}
+.footer2{
+    color: white;
+    text-transform: capitalize;
+}
+/* meal  */
+.banner{
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(../img/banner.jpg);
+    height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.food{
+    padding-bottom: 4%;
+}
+.food .card{
+    text-align: center;
+    border-radius: 10%;
+    border: 2px solid #cd0b0b;
+    box-shadow: 0 0 30px 0 #cd0b0b;
+    transition: 1s;
+}
+.food .card img{
+    height: 200px;
+    padding: 3%;
+    border-bottom: 2px solid #cd0b0b;
+}
+.food .card-body h5{
+    text-transform: capitalize;
+    font-size: 30px;
+}
+.food .card-body p{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 20px;
+    color: #cd0b0b;
+}
+.food .card-body button{
+    text-transform: capitalize;
+    background: #cd0b0b;
+    color: white;
+}
+/* meal done  */
+
+/* styling login  */
+.login{
+    width: 30% !important;
+}
+.nav-item .active{
+    background: #cd0b0b !important;
+    color: white !important;
+}
+.login #tab-register{
+    color: #cd0b0b;
+    font-weight: 600;
+}
+.login #tab-login{
+    color: #cd0b0b;
+    font-weight: 600;
+}
+.log{
+    text-align: center;
+}
+.log button{
+    background: #cd0b0b;
+    border: none;
+}
+.reg a{
+    color: #cd0b0b;
+}
+
+/* styling login done  */
+/* styling cart  */
+.cart table{
+    width: 100%;
+    outline: 2px solid #cd0b0b;
+}
+.cart thead{
+    background-color: #cd0b0b;
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+}
+.cart tbody{
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.cart tbody img{
+    height: 70px;
+    width: 80%;
+}
+.cart tbody i{
+    color: #cd0b0b;
+    cursor: pointer;
+    font-size: 20px;
+}
+.item td{
+    border: 2px solid #cd0b0b;
+}
+.subtot td{
+    font-weight: 700;
+}
+.cartbut button{
+    text-transform: capitalize;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+/* styling cart done  */
+
+/* styling checkout */
+.cart h1{
+    text-transform: capitalize;
+    color: #cd0b0b;
+}
+.total td{
+    font-weight: 700;
+    font-size: 30px;
+}
+.checkbut button{
+    background-color: #cd0b0b;
+    border: none;
+    width: 100%;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.checkbut button:hover{
+    background-color: #f83737;
+}
+.check form input{
+    border-color: #cd0b0b !important; 
+}
+.check form textarea{
+    border-color: #cd0b0b !important;
+}
+/* styling checkout done  */
+
+/* styling profile  */
+.pavat{
+    text-align: center;
+    background-color: #cd0b0b;
+    border-radius: 1rem;
+}
+.pavat img{
+    height: 200px;
+    border-radius: 100%;
+    /* outline: 4px solid #cd0b0b; */
+   padding-top: 3%;
+}
+.pavat h4{
+    margin-top: 4%;
+    text-transform: capitalize;
+    color: white;
+    font-style: italic;
+}
+.pform form{
+    outline: 2px solid #cd0b0b;
+    padding: 3%;
+}
+.pform form label{
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.qlink{
+    background: #cd0b0b;
+    border-radius: 1rem;
+}
+.qlink h2{
+    text-transform: capitalize;
+    color: white;
+    text-align: center;
+    border-bottom: 2px solid white;
+    padding-top: 5%;
+}
+.qlink ul{
+    list-style: none;
+    padding-top: 5%;
+}
+.qlink ul a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.qlink li a:hover{
+    background-color: white;
+}
+.qlink ul a:hover{
+    color: #cd0b0b;
+    font-weight: 500;
+}
+.updatebtn button{
+    background-color: #cd0b0b;
+    border: none;
+}
+.updatebtn button:hover{
+    background: #f83737;
+}
+/* styling profile done  */
+
+/* callback  */
+.call p{
+    font-size: 25px;
+    text-align: center;
+    padding-top: 4%;
+    text-transform: capitalize;
+}
+.call span{
+    color: #cd0b0b;
+    font-weight: 700;
+    font-style: italic;
+}
+/* callback done  */
+
+/* delete button  */
+.cart .item button{
+    border: none;
+    background-color: white;
+}
+/* delete button  */
+/* pagin  */
+.pag .page-item{
+    color: #cd0b0b;
+}
+/* pagin  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 320px) and (max-width:768px){
+    .carousel-inner{
+        height: 40vh;
+    }
+    .carousel-control-prev i{
+        font-size: 30px;
+        color: #cd0b0b;
+    }
+    .carousel-control-next i{
+        font-size: 30px;
+        color: #cd0b0b;
+    }
+    .title{
+        text-transform: capitalize;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: 700;
+        color: #cd0b0b;
+        font-size: 30px;
+    }
+    .bestsell .card p{
+        text-align: center;
+        font-size: 20px;
+        text-transform: capitalize;
+        font-weight: 500;
+        color: #cd0b0b;
+    }
+    .contact form{
+        width: 100%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .cart table{
+        width: 100%;
+        outline: 2px solid #cd0b0b;
+    }
+    .item td button{
+        font-size: 12px;
+        padding-top: 2%;
+    }
+    .total td{
+        font-weight: 700;
+        font-size: 20px;
+    }
+}

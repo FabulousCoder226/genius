@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block carousel %} {% include 'carousel.html' %} {% endblock carousel %}
+{% block content %}
+<div class="container mb-4">
+    <div class="row bestsell" id="meal">
+        <h1 class="text-center mt-5 mb-3 title"><i class='bx bxs-bowl-hot'></i>best selling meals</h1>
+        {% if meal  %}       
+            {% for item in meal %}
+            <div class="col-12 col-md-6 mt-4" data-aos="flip-right" data-aos-duration="3000">
+                <div class="card">
+                    <a href="{% url 'category' item.id item.slug %}"><img src="{{item.pix.url}}" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                        <p class="card-text">{{item.name}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}           
+        {% endif %}
+    </div>
+</div>
+<!-- meals done  -->
+
+<div class="enjoy">
+  <h3>Enjoy amazing and delicious delicacies in your one stop shop</h3>
+  <a href="{% url 'products' %}"><button class="btn">browse meals</button></a> 
+</div>
+
+<!-- offer  -->
+    <div class="container-fluid mt-5 mb-5">
+        <h1 class="text-center title"><i class='bx bxs-gift'></i>special offers</h1>
+        <div class="row mt-5 offer">       
+        {% if gift %}    
+            {% for meal in gift %}
+            <div class="col-sm-4 col-md-2">
+                <div class="card">
+                    <img src="{{meal.pix.url}}" class="card-img-top">
+                </div>
+            </div>   
+            {% endfor %}
+        {% endif %}           
+        </div>
+    </div>
+{% endblock content %}
+{% block contact %} {% include 'contact.html' %} {% endblock contact %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

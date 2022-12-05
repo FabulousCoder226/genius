@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+{% block content %}
+<!-- content  -->
+
+{% if items %}
+<div class="container food">
+  <h1 class="text-center title pt-5">you searched for {{items}}</h1>
+  <div class="row ">
+      {% if searched_item %}     
+      {% for item in searched_item %}
+      <div class="col-12 col-md-6 col-lg-4 pt-5">
+          <div class="card">
+              <img src="{{item.pix.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{item.foodname}}</h5>
+                <p class="card-text">₦{{item.price|floatformat:2|intcomma}}</p>
+                <form action="{% url 'add_to_cart' %}" method="POST"> 
+                  {% csrf_token %}
+                  <input type="hidden" name="quantity" value="1">
+                  <input type="hidden" name="foodid" value="{{item.id}}">
+                  <button type="submit" class="btn">add to cart</button>
+                </form>
+              </div>
+          </div>
+      </div>       
+      {% endfor %}        
+      {% endif %} 
+{% else %}
+  <h3>your search for {{items}} was not found</h3>
+{% endif %}
+  </div>
+</div>  
+
+
+        
+   
+<!-- content done  -->
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+{% block content %}
+ <!-- content  -->
+ <div class="container mt-5 mb-5">
+  <h1 class="title text-center mb-4">thank you</h1>
+  <div class="row">
+    <div class="col-12 col-md-3 pavat">
+      <img src="{{userprof.pix.url}}" alt="">
+      <h4>{{userprof.user}}</h4>
+    </div>
+    <div class="col-12 col-md-6 call">
+      <p>dear <span>{{userprof.user}}</span> your order has been received and payment is confirmed. <br>
+      one of our representatives will contact you shortly. <br>thanks for your patronage! </p>
+    </div>
+    <div class="col-12 col-md-3 qlink">
+      <h2>quick links</h2>
+      <ul>
+        <li><a href="{% url 'profile' %}"><i class='bx bx-chevron-right'></i>profile</a></li>
+        <li><a href="{% url 'profile_update' %}"><i class='bx bx-chevron-right'></i>profile update</a></li>
+        <li><a href="{% url 'password_update' %}"><i class='bx bx-chevron-right'></i>password update</a></li>
+        <li><a href="{% url 'home' %}"><i class='bx bx-chevron-right'></i>back home</a></li>
+      </ul>
+    </div>
+  </div>
+ </div>
+  <!-- content done  -->
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+{% block content %}
+<!-- content  -->
+  <div class="container login mt-5 mb-5">
+      <!-- Pills navs -->
+      <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+      <li class="nav-item" role="presentation">
+      <a
+        class="nav-link "
+        id="tab-login"
+        data-mdb-toggle="pill"
+        href="{% url 'signin' %}"
+        role="tab"
+        aria-controls="pills-login"
+        aria-selected="true"
+        >Login</a
+      >
+      </li>
+      <li class="nav-item" role="presentation">
+      <a
+        class="nav-link active"
+        id="tab-register"
+        data-mdb-toggle="pill"
+        href="{% url 'signup' %}"
+        role="tab"
+        aria-controls="pills-register"
+        aria-selected="false"
+        >Register</a
+      >
+      </li>
+      </ul>
+
+    <div class="tab-content">
+      <form action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-outline mb-4">
+          <input type="text" name="username" id="registerName" class="form-control" />
+          <label class="form-label" for="registerName">Username</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="text" name="first_name" id="registerUsername" class="form-control" />
+          <label class="form-label" for="registerUsername">First name</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="text" name="last_name" id="registerUsername" class="form-control" />
+          <label class="form-label" for="registerUsername">Last name</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="email" name="email" id="registerEmail" class="form-control" />
+          <label class="form-label" for="registerEmail">Email</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="text" name="address" id="registerAddress" class="form-control" />
+          <label class="form-label" for="registerAddress">Address</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="text" name="phone" id="registerPhone" class="form-control" />
+          <label class="form-label" for="registerPhone">Phone</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input  name="pix" value="customer/avatar.jpg.png" type="hidden" id="registerPassword" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="password" name="password1" id="registerPassword" class="form-control" />
+          <label class="form-label" for="registerPassword">Password</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="password" name="password2" id="registerRepeatPassword" class="form-control" />
+          <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+        </div>
+
+        <div class="log">
+          <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+ <!-- content done  -->
+
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

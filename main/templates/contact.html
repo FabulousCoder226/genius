@@ -1,0 +1,24 @@
+<div class="container mb-5 mt-5" id="contact">
+    <h1 class="text-center title">get in touch</h1>
+    <div class="row contact">
+      <div class="col-12">
+        <form action="{% url 'contact' %}" method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Full name</label>
+            <input type="text" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Message</label>
+            <textarea name="message" id="" cols="30" rows="10" class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
