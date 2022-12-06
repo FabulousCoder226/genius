@@ -276,7 +276,7 @@ def pay(request):
     if request.method == 'POST':
         api_key = 'sk_test_27a1166abccb107ea7d9f6ba54f3ebfee7520b00' #secret key from paystack
         curl = 'https://api.paystack.co/transaction/initialize' #paystack call url
-        cburl = 'http://52.91.224.59/callback' #payment confirmation page
+        cburl = 'http://3.84.86.135/callback' #payment confirmation page
         ref = str(uuid.uuid4()) #reference number required by paystack as an additional order number
         profile = Customer.objects.get(user__username = request.user.username)
         order_no = profile.id #the main ordernumber
