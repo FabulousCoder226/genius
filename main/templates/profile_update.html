@@ -12,6 +12,7 @@
     </div>
     <div class="col-12 col-md-6 pform">
       <form action="{% url 'profile_update' %}" method="POST" enctype="multipart/form-data"> 
+        {% csrf_token %}
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">first name</label>
           <input type="text" name="{{userprof.first_name}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
